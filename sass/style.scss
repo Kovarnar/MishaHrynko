@@ -1,0 +1,158 @@
+@import 'veriables';
+@import 'mixin';
+a {text-decoration: none;}
+a:link, a:visited {color: $grayColor;}
+li, ol {
+    list-style: none;
+}
+* {box-sizing: border-box; transform: all 1.5s ease;}
+html {scroll-behavior: smooth;}
+html, body{
+    line-height: 1; 
+    font-size: $baseFontSize;
+    font-family: $monserrat;
+    font-weight: 400;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.container {
+    max-width: 545px;
+    margin: 0 auto;
+    padding: 0 15px;
+} 
+.header {
+    padding: 32px 0 24px;
+    background-color: $redColor;
+    color: $whiteColor;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        @media only screen and (min-width: 410px) {
+            flex-direction: row;
+        }
+    }
+}
+.about{
+    margin-bottom: 10px;
+    .name {
+        display: block;
+        font-weight: 600;
+        font-size: rem(30px);
+        line-height: 1.23;
+        margin-bottom: 13px;
+    }
+    .specialization{
+        display: block;
+        font-size: rem(12px);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+    p {
+        font-size: rem(10px);
+        line-height: 1.5;
+    }
+    @media only screen and (min-width: 410px) {
+        margin: 0 10px 0 0;
+        max-width: 350px;
+    }
+}
+.avatar {
+    margin: 0 auto;
+    @media only screen and (min-width: 410px) {
+        margin: 0;
+    }
+}
+main {
+    color: $grayColor;
+    padding-bottom: 8px;
+}
+section {
+    padding: 24px 0;
+    &:not(:last-child) {
+    border-bottom: 1px solid $liteGrayColor;
+    }
+    &:not(:first-child) {
+        display: grid;
+        @media only screen and (min-width: 545px) {
+            grid-template-columns: 1fr 2fr;
+        }
+    }
+}
+.contacts {
+    ul {
+        display: flex;
+        flex-direction: column;
+        @media only screen and (min-width: 350px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        li {
+            font-size: rem(10px);
+            line-height: 1.5;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+                @media only screen and (min-width: 350px) {
+                    margin-bottom: 0px;
+                }
+            }
+            &:hover {
+                font-weight: 600;
+            }
+        }
+    }
+} 
+.title {
+    font-weight: 500;
+    font-size: rem(20px);
+    color: $redColor;
+    margin-bottom: 15px;
+    @media only screen and (min-width: 545px) {
+        margin: 0;
+    }
+}
+.list {
+    font-size: rem(10px);
+    line-height: 1.5;
+    li {
+        border-left: 1px dashed $liteGrayColor;
+        padding-left: 8px;
+        > *:not(:last-child) {
+            padding-bottom: 8px;
+        }
+    }
+    h4 {
+        font-size: rem(12px);
+        font-weight: 500;
+    }
+    span {
+        font-weight: 500;
+    }
+}
+.long-list {
+    li {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+}
+.short-list {
+    ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 60px;
+        gap: 1px;
+    }
+    li {
+        line-height: 1.9;
+    }
+}
